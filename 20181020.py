@@ -80,12 +80,12 @@ def spider_maoyan():
 	# 猫眼电影短评接口
 	offset = 0
 	# 电影是2018-09-30上映的
-	startTime = '2018-09-30'
-	day = [22,23,24,25,26,27,28,29,30,1,2,3,4,5,6]
+	startTime = '2018-10-01'
+	day = [2,3,4,5,6,7]
 	j = 0
-	page_num = int(20000/15)
+	page_num = int(10000/15)
 	for i in range(page_num):
-		comment_api = 'http://m.maoyan.com/mmdb/comments/movie/1217236.json?_v_=yes&offset={0}&startTime={1}%2021%3A09%3A31'.format(offset,startTime)
+		comment_api = 'http://m.maoyan.com/mmdb/comments/movie/1203437.json?_v_=yes&offset={0}&startTime={1}%2016%3A06%3A47'.format(offset,startTime)
 		s0 = Spidermaoyan(comment_api,startTime)
 		json_comment = s0.get_json()
 		if json_comment["total"] == 0: # 当前时间内评论爬取完成
